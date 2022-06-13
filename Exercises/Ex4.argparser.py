@@ -5,7 +5,7 @@
 
 import argparse
 
-print("type 'python3 Ex4.argsparser.py --help for information'")
+print("type 'python3 Ex4.argsparser.py --help' for information")
 
 # general languages
 parser = argparse.ArgumentParser()
