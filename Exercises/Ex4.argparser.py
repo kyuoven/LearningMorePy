@@ -5,40 +5,9 @@
 
 import argparse
 
-parser = argparse.ArgumentParser()
-# used to specify which command-line options the program is willing to accept
-parser.add_argument("echo", help="echo the string you use here")
-# the parse_args() method actually returns some data from the options specified, in this case, echo
-args = parser.parse_args()
-print(args.echo)
+print("type 'python3 Ex4.argsparser.py --help for information'")
 
-
-print("OR")
-
-
-parser = argparse.ArgumentParser()
-# argparse treates the options we give it as strings, unless we tell it otherwise
-parser.add_argument("square", help="display a square of a given number", type=int)
-args = parser.parse_args()
-print(args.square ** 2, "is the square of the number you put in")
-
-
-print("OR")
-
-
-parser = argparse.ArgumentParser()
-# new keyword: action, and we give it the value: store_true
-# this means that, if the option is specified, assign the value True to args.verbose
-parser.add_argument(
-    "-v" "--verbose", help="increase output verbosity", action="store_true"
-)
-args = parser.parse_args()
-if args.verbose:
-    print("Verbosity turned on")
-
-
-print("Now mine:")
-
+# general languages
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--hi",
@@ -46,6 +15,99 @@ parser.add_argument(
     help="Displays a greeting in a few different languages",
     action="store_true",
 )
+
+# english
+parser.add_argument(
+    "--hienglish",
+    "--helloenglish",
+    help="Displays a greeting in English",
+    action="store_true",
+)
+
+# dutch
+parser.add_argument(
+    "--hidutch",
+    "--hellodutch",
+    help="Displays a greeting in Dutch",
+    action="store_true",
+)
+
+# french
+parser.add_argument(
+    "--hifrench",
+    "--hellofrench",
+    help="Displays a greeting in French",
+    action="store_true",
+)
+
+# chinese
+parser.add_argument(
+    "--hichinese",
+    "--hellochinese",
+    help="Displays a greeting in Chinese",
+    action="store_true",
+)
+
+# spanish
+parser.add_argument(
+    "--hispanish",
+    "--hellospanish",
+    help="Displays a greeting in Spanish",
+    action="store_true",
+)
+
+# hindi
+parser.add_argument(
+    "--hihindi",
+    "--hellohindi",
+    help="Displays a greeting in Hindi",
+    action="store_true",
+)
+
+# korean
+parser.add_argument(
+    "--hikorean",
+    "--hellokorean",
+    help="Displays a greeting in Korean",
+    action="store_true",
+)
+
+# swedish
+parser.add_argument(
+    "--hiswedish",
+    "--helloswedish",
+    help="Displays a greeting in Swedish",
+    action="store_true",
+)
+
+# swedishfish
+parser.add_argument(
+    "--hiswedishfish",
+    "--helloswedishfish",
+    help="Displays a greeting in Swedish. A lot of times",
+    action="store_true",
+)
+
 args = parser.parse_args()
 if args.hi:
-    print("Hello, Hallo, Bonjour, 你好, Hola, Namaste, Ahoj, Guten Tag, 안녕하세요, Hej !")
+    print("Hello, Hallo, Bonjour, 你好, Hola, Namaste, 안녕하세요, Hej !")
+elif args.hienglish:
+    print("Hello!")
+elif args.hidutch:
+    print("Hallo!")
+elif args.hifrench:
+    print("Bonjour!")
+elif args.hichinese:
+    print("你好!")
+elif args.hispanish:
+    print("Hola!")
+elif args.hihindi:
+    print("Namaste!")
+elif args.hikorean:
+    print("안녕하세요!")
+elif args.hiswedish:
+    print("Hej!")
+elif args.hiswedishfish:
+    print(
+        "Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej! Hej!"
+    )
