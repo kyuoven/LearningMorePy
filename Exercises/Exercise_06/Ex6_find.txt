@@ -1,0 +1,14 @@
+find tool:
+
+find --help
+->  information about the find command
+
+find .  -name "*.txt" -print
+->  will find all .txt files and print them out in the terminal
+
+find . -name "*.rb" -exec rm {} \;
+->  deletes all Ruby files, the exec argument takes a command, 
+    replaces any instance of {} with the name of the file, then stops
+    reading when it hits the ;. we use \; because bash and many other 
+    shells use ; as part of their language, so we have to escape it.
+
